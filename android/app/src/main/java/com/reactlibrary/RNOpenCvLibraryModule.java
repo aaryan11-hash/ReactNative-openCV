@@ -150,19 +150,19 @@ public class RNOpenCvLibraryModule extends ReactContextBaseJavaModule {
         
         dst = new Mat(src.rows(), src.cols(), src.type());
         
-        Imgproc.GaussianBlur(src, dst, new Size(15,15), 0);
+       
   
         //Applying GaussianBlur on the Image
-        // for (int i = 1; i < MAX_KERNEL_LENGTH; i = i + 2) {
-          
-        // }
+         //for (int i = 1; i < MAX_KERNEL_LENGTH; i = i + 2) {
+          Imgproc.GaussianBlur(src, dst, new Size(i,i), 0);
+         //}
   
   
         Bitmap finalImage = Bitmap.createBitmap(dst.cols(),
         dst.rows(), Bitmap.Config.RGB_565);
         Utils.matToBitmap(dst, finalImage);
         Bitmap bitmap = (Bitmap) finalImage;
-        bitmap = Bitmap.createScaledBitmap(bitmap, 600, 450, false);
+        bitmap = Bitmap.createScaledBitmap(bitmap, 600,500, false);
 
   
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
